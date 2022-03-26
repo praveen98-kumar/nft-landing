@@ -43,17 +43,26 @@ const MenuItem = styled.li`
 `
 
 const Navigation = () => {
+    const scrollTo = (id) => {
+        let element = document.getElementById(id)
+
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: 'start',
+            inline: 'nearest'
+        })
+    }
     return (
-        <Container>
+        <Container id='navigation'>
             <Navbar>
                 <Logo />
                 <Menu>
-                    <MenuItem>Home</MenuItem>
-                    <MenuItem>About</MenuItem>
-                    <MenuItem>RoadMap</MenuItem>
-                    <MenuItem>Showcase</MenuItem>
-                    <MenuItem>Team</MenuItem>
-                    <MenuItem>Faq</MenuItem>
+                    <MenuItem onClick={() => scrollTo('home')}>Home</MenuItem>
+                    <MenuItem onClick={() => scrollTo('about')}>About</MenuItem>
+                    <MenuItem onClick={() => scrollTo('roadmap')}>RoadMap</MenuItem>
+                    <MenuItem onClick={() => scrollTo('showcase')}>Showcase</MenuItem>
+                    <MenuItem onClick={() => scrollTo('team')}>Team</MenuItem>
+                    <MenuItem onClick={() => scrollTo('faq')}>Faq</MenuItem>
                 </Menu>
                 <Button text={"Connect Wallet"} link={""} />
             </Navbar>

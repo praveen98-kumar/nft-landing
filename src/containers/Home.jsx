@@ -67,7 +67,7 @@ const Circle = styled.div`
 
 const Home = () => {
     return (
-        <Section>
+        <Section id='home'>
             <Container>
                 <Box>
                     <TypeWriterText />

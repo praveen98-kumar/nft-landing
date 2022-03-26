@@ -110,7 +110,7 @@ const MemberComponent = ({
 
 const Team = () => {
     return (
-        <Section>
+        <Section id='team'>
             <Confetti />
             <Title>Team</Title>
             <Container>
