@@ -22,6 +22,10 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+button {
+    font-family: 'Sora', sans-serif;
+}
 `
 
 export default GlobalStyles
