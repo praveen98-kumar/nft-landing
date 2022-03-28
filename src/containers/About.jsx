@@ -19,15 +19,37 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 70em){
+        width: 85%;
+    }
+    @media (max-width: 64em){
+        width: 100%;
+        flex-direction: column;
+
+        &>*:last-child {
+            width: 80%;
+        }
+    }
+    @media (max-width: 40em){
+    
+
+        &>*:last-child {
+            width: 90%;
+        }
+    }
 `
 
 const Box = styled.div`
     width: 50%;
     height: 100%;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: 40em){
+       min-height: 50vh;
+    }
 `
 
 const Title = styled.h2`
@@ -37,6 +59,17 @@ const Title = styled.h2`
     color: ${props => props.theme.body};
     align-self: flex-start;
     margin: 0 auto;
+
+    @media (max-width: 64em){
+        width: 100%;
+        text-align: center;
+    }
+    @media (max-width: 40em){
+      font-size: ${props => props.theme.fontxl};
+    }
+    @media (max-width: 30em){
+           font-size: ${props => props.theme.fontlg};
+    }
 `
 
 const SubTitle = styled.p`
@@ -46,6 +79,18 @@ const SubTitle = styled.p`
     align-self: flex-start;
     margin: 1rem auto;
     font-weight: 400;
+
+     @media (max-width: 64em){
+        width: 100%;
+        text-align: center;
+        font-size: ${props => props.theme.fontmd};
+    }
+    @media (max-width: 40em){
+      font-size: ${props => props.theme.fontmd};
+    }
+    @media (max-width: 30em){
+           font-size: ${props => props.theme.fontsm};
+    }
 `
 
 
@@ -56,12 +101,33 @@ const SubTitleLight = styled.p`
     align-self: flex-start;
     margin: 1rem auto;
     font-weight: 400;
+    font-weight: 400;
+
+    @media (max-width: 64em){
+        width: 100%;
+        text-align: center;
+        font-size: ${props => props.theme.fontsm};
+    }
+    @media (max-width: 40em){
+        font-size: ${props => props.theme.fontsm};
+    }
+    @media (max-width: 30em){
+        font-size: ${props => props.theme.fontsx};
+    }
 `
 
 const ButtonContainer = styled.div`
     width: 80%;
     align-self: flex-start;
     margin: 1rem auto;
+    display: flex;
+
+    @media (max-width: 64em){
+        width: 100%;
+        button{
+            margin: 0 auto;
+        }
+    }
 `
 
 const About = () => {
@@ -72,7 +138,7 @@ const About = () => {
                     <Carousel />
                 </Box>
                 <Box>
-                    <Title>Welcome To The Weirdos Club.</Title>
+                    <Title>Welcome To The <br /> Weirdos Club.</Title>
                     <SubTitle>The WEIRDOS CLUB is a private collection of NFTs—unique digital collectibles. The Weirdos are stored as ERC-721 tokens on the Ethereum blockchain and hosted on IPFS.</SubTitle>
                     <SubTitleLight>With more than 200+ hand drawn traits, each NFT is unique and comes with a membership to an exclusive group of successful investors. Join an ambitious ever-growing community with multiple benefits and utilities.</SubTitleLight>
                     <ThemeProvider theme={dark}>

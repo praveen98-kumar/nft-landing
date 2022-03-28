@@ -27,6 +27,13 @@ const Container = styled.div`
     justify-content: space-between;
 
     border-bottom: 1px solid ${props => props.theme.text};
+    @media (max-width: 64em){
+        width: 90%;
+
+        h1 {
+            font-size: ${props => props.theme.fontxxxl};
+        }
+    }
 `
 
 const Left = styled.div`
@@ -34,6 +41,9 @@ const Left = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 64em){
+        width: 100%;
+    }
 `
 
 const IconList = styled.div`
@@ -57,6 +67,9 @@ const MenuItems = styled.ul`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 1rem;
+    @media (max-width: 64em){
+        display: none;
+    }
 `
 const Item = styled.li`
     width: fit-content;
@@ -84,6 +97,15 @@ const Bottom = styled.div`
 
     a {
         text-decoration: underline;
+    }
+
+    @media (max-width: 48em){
+        flex-direction: column;
+        width: 100%;
+
+        span {
+            margin-bottom: 1rem;
+        }
     }
 `
 

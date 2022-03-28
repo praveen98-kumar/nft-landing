@@ -21,6 +21,13 @@ const Title = styled.h1`
     margin: 1rem auto;
     border-bottom: 1px solid ${props => props.theme.text};
     width: fit-content;
+
+    @media (max-width: 64em){
+        width: 80%;
+    }
+    @media (max-width: 48em){
+        width: 90%;
+    }
 `
 const Container = styled.div`
     width: 70%;
@@ -47,7 +54,9 @@ const Items = styled.ul`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* background: lightblue; */
+    @media (max-width: 48em){
+        width: 90%;
+    }
 
     &>*:nth-of-type(2n+1){
         justify-content: start;

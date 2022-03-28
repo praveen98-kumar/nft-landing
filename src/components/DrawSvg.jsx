@@ -52,8 +52,6 @@ const DrawSvg = () => {
 
         const length = svg.getTotalLength();
 
-        console.log(length)
-
         svg.style.strokeDasharray = length;
 
         svg.style.strokeDashoffset = length;

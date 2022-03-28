@@ -9,7 +9,7 @@ const Section = styled.div`
     width: 100vw;
     background-color: ${props => props.theme.text};
     position: relative;
-
+    /* height: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +24,10 @@ const Title = styled.h1`
     margin: 1rem auto;
     border-bottom: 1px solid ${props => props.theme.body};
     width: fit-content;
+
+    @media (max-width:48em){
+        font-size: ${props => props.theme.fontxl};
+    }
 `
 const Container = styled.div`
     width: 75%;
@@ -31,10 +35,27 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width:  64em){
+        width: 80%;
+    }
+    @media (max-width: 48em){
+        width: 90%;
+        flex-direction: column;
+
+        &>*:last-child {
+            &>*:first-child{
+                margin-top: 0;
+            }
+        }
+    }
 `
 
 const Box = styled.div`
     width: 45%;
+    @media (max-width: 64em){
+        width: 90%;
+        align-self: center;
+    }
 `
 
 const FAQ = () => {

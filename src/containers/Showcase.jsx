@@ -24,17 +24,39 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 
     &>*:first-child{
         animation-duration: 20s;
+
+        @media (max-width: 30em){
+            animation-duration: 15s;
+        }
     }
     &>*:last-child{
         animation-duration: 15s;
+        @media (max-width: 30em){
+            animation-duration: 10s;
+        }
     }
 `
 const move = keyframes`
     0% {transform: translateX(100%)};
     100% {transform: translateX(-100%)};
+`
+
+const Title = styled.h1`
+    font-size: ${props => props.theme.fontxxl};
+    text-transform: capitalize;
+    color: ${props => props.theme.body};
+   
+    margin: 1rem auto;
+    border-bottom: 1px solid ${props => props.theme.body};
+    width: fit-content;
+
+    @media (max-width:48em){
+        font-size: ${props => props.theme.fontxl};
+    }
 `
 
 const Row = styled.div`
@@ -54,6 +76,12 @@ const ImageContainer = styled.div`
     img {
         width: 100%;
         height: auto;
+    }
+    @media (max-width: 48em){
+        width: 12rem;
+    }
+    @media (max-width: 30em){
+        width: 10rem;
     }
 `
 
@@ -78,6 +106,10 @@ const Details = styled.div`
        font-size: ${props => props.theme.fontmd};
        color: ${props => props.theme.body};
        font-weight: 600;
+
+       @media (max-width: 30em){
+           font-size: ${props => props.theme.fontsm};
+        }
    }
 `
 
@@ -124,6 +156,7 @@ const Showcase = () => {
     const row2Ref = useRef(null)
     return (
         <Section id='showcase'>
+            <Title>Collections</Title>
             <Row direction="none" ref={row1Ref}>
                 <NFTItem img={img1} number={852} price={1} passRef={row1Ref} />
                 <NFTItem img={img2} number={123} price={1.2} passRef={row1Ref} />

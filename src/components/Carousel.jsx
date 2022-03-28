@@ -24,6 +24,23 @@ const Container = styled.div`
     width: 25vw;
     height: 70vh;
 
+
+    @media (max-width: 70em){
+        height: 60vh;
+    }
+
+    @media (max-width: 64em){
+        height: 50vh;
+        width: 30vw;
+    }
+    @media (max-width: 48em){
+        height: 50vh;
+        width: 40vw;
+    }
+    @media (max-width: 30em){
+        height: 45vh;
+        width: 60vw;
+    }
     .swiper {
         width: 100%;
         height: 100%;
@@ -35,6 +52,13 @@ const Container = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     }
 
     .swiper-button-next {
@@ -47,6 +71,12 @@ const Container = styled.div`
         top: 60%;
         &:after{
             display: none;
+        }
+        @media (max-width: 64em){
+            width: 3rem;
+        }
+        @media (max-width: 30em){
+            width: 2rem;
         }
     }
     .swiper-button-prev {
@@ -61,6 +91,13 @@ const Container = styled.div`
 
         &:after{
             display: none;
+        }
+
+        @media (max-width: 64em){
+            width: 3rem;
+        }
+        @media (max-width: 30em){
+            width: 2rem;
         }
     }
   
